@@ -1,0 +1,55 @@
+:root {
+  --fundo: #f8f4ec; --texto: #1d2633; --cartao: #fffdf9; --primaria: #2f5c97;
+  --suave: #efe8dc; --mudo: #6b7584; --borda: #e2d9c9; --destaque: #fbe3c2;
+  --certo: #2e9563; --erro: #d23b33;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Nunito", system-ui, sans-serif; color: var(--texto); background: var(--fundo);
+  background-image: radial-gradient(circle at 1px 1px, #2f5c9722 1px, transparent 0); background-size: 22px 22px; }
+main { max-width: 680px; margin: 0 auto; padding: 32px 16px 48px; }
+header { text-align: center; margin-bottom: 28px; }
+h1, .enunciado, .grande, .stats b { font-family: "Fredoka", "Nunito", sans-serif; font-weight: 600; }
+h1 { font-size: clamp(2rem, 7vw, 3rem); margin: 8px 0 0; line-height: 1.1; }
+.eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--primaria); margin: 0; }
+.mudo { color: var(--mudo); }
+.progresso-info { display: flex; justify-content: space-between; font-size: .9rem; }
+.trilha { height: 10px; background: var(--suave); border-radius: 99px; margin: 8px 0 16px; overflow: hidden; }
+.barra { height: 100%; width: 0; background: var(--primaria); border-radius: 99px; transition: width .5s; }
+.cartao { background: var(--cartao); border: 1px solid var(--borda); border-radius: 2rem; padding: clamp(20px, 5vw, 32px);
+  box-shadow: 0 20px 50px -25px #2f5c9766; }
+.topo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; }
+.nivel { background: var(--destaque); padding: 4px 12px; border-radius: 99px; font-size: .78rem; font-weight: 700; }
+.tentativas { font-size: .78rem; display: flex; align-items: center; gap: 6px; }
+.tentativas i { width: 10px; height: 10px; border-radius: 50%; border: 1px solid #6b758466; }
+.tentativas i.erro { background: var(--erro); border-color: var(--erro); }
+.tentativas i.certo { background: var(--certo); border-color: var(--certo); }
+.enunciado { font-size: clamp(1.2rem, 4.5vw, 1.5rem); line-height: 1.5; white-space: pre-line; margin: 20px 0 24px; }
+.alternativas { display: grid; gap: 10px; }
+.alt { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font: inherit; font-size: 1rem; color: inherit;
+  background: var(--cartao); border: 2px solid var(--borda); border-radius: 99px; padding: 10px 16px; cursor: pointer; transition: .15s; }
+.alt:hover:not(:disabled) { border-color: #2f5c9788; }
+.alt:disabled { cursor: not-allowed; }
+.letra { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: var(--suave); display: grid; place-items: center; font-weight: 800; font-size: .85rem; }
+.alt.selecionada { border-color: var(--primaria); background: #2f5c970d; }
+.alt.selecionada .letra { background: var(--primaria); color: #fff; }
+.alt.errada { border-color: #d23b3366; opacity: .6; text-decoration: line-through; }
+.alt.errada .letra { background: var(--erro); color: #fff; }
+.alt.correta { border-color: var(--certo); background: #2e95631a; }
+.alt.correta .letra { background: var(--certo); color: #fff; }
+.aviso { margin-top: 20px; padding: 12px 20px; border-radius: 1.5rem; font-weight: 600; font-size: .92rem; animation: surgir .25s ease-out; }
+.aviso.ok { background: #2e956326; color: var(--certo); }
+.aviso.ruim { background: #d23b331a; color: var(--erro); }
+.botao { display: block; width: 100%; margin-top: 24px; padding: 14px 20px; border: 0; border-radius: 99px; font: inherit; font-weight: 700; font-size: 1rem;
+  background: var(--primaria); color: #fff; cursor: pointer; transition: .15s; }
+.botao:hover:not(:disabled) { filter: brightness(1.1); }
+.botao:disabled { opacity: .4; cursor: not-allowed; }
+.link { display: block; margin: 24px auto 0; background: none; border: 0; color: var(--mudo); font: inherit; font-size: .9rem; cursor: pointer; }
+.link:hover { text-decoration: underline; }
+.centro { text-align: center; }
+.grande { font-size: 4rem; color: var(--primaria); margin: 8px 0 0; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; text-align: left; }
+.stats div { background: var(--suave); border-radius: 1.5rem; padding: 16px; }
+.stats b { display: block; font-size: 2rem; }
+.stats span { font-size: .78rem; color: var(--mudo); }
+[hidden] { display: none !important; }
+@keyframes surgir { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }

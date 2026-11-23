@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Questionário de Matemática — 82 questões</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">82 questões · do básico ao avançado</p>
+      <h1>Questionário de Matemática</h1>
+    </header>
+
+    <section id="tela-quiz">
+      <div class="progresso-info">
+        <span><b>Questão <span id="num">1</span></b> <span class="mudo">de 82</span></span>
+        <span class="mudo"><span id="pct">0</span>% concluído</span>
+      </div>
+      <div class="trilha"><div class="barra" id="barra"></div></div>
+
+      <div class="cartao">
+        <div class="topo">
+          <span class="nivel" id="nivel"></span>
+          <span class="mudo tentativas">Tentativas <i></i><i></i><i></i></span>
+        </div>
+        <p class="enunciado" id="enunciado"></p>
+        <div class="alternativas" id="alternativas"></div>
+        <div class="aviso" id="aviso" hidden></div>
+        <button class="botao" id="confirmar" disabled>Confirmar resposta</button>
+        <button class="botao" id="proxima" hidden>Próxima questão →</button>
+      </div>
+      <button class="link" id="reiniciar1">Reiniciar questionário</button>
+    </section>
+
+    <section id="tela-resultado" hidden>
+      <div class="cartao centro">
+        <p class="eyebrow">Resultado final</p>
+        <p class="grande" id="aproveitamento"></p>
+        <p class="mudo">de aproveitamento</p>
+        <div class="stats">
+          <div><b id="r-total"></b><span>Questões respondidas</span></div>
+          <div><b id="r-primeira"></b><span>Acertos na 1ª tentativa</span></div>
+          <div><b id="r-depois"></b><span>Acertos após novas tentativas</span></div>
+          <div><b id="r-esgotadas"></b><span>Tentativas esgotadas</span></div>
+        </div>
+        <button class="botao" id="reiniciar2">Reiniciar questionário</button>
+      </div>
+    </section>
+  </main>
+  <script src="questoes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
